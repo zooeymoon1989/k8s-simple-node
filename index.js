@@ -7,4 +7,8 @@ app.get('/', function (req, res) {
     res.send("hello from node , the host address is:"+ ipAddress + ", and the hostname is:"+os.hostname())
 })
 
+app.get('/ping', function (req, res) {
+    res.send("pong")
+})
+
 app.listen(3000)
