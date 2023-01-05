@@ -1,9 +1,10 @@
 const express = require('express')
-const os = require('os')
 const app = express()
+const os = require('os')
 
 app.get('/', function (req, res) {
-    res.send("hello from node , the hostname is:"+os.hostname())
+    const ipAddress = req.socket.remoteAddress;
+    res.send("hello from node , the host address is:"+ ipAddress + ", and the hostname is:"+os.hostname())
 })
 
 app.listen(3000)
